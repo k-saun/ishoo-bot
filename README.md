@@ -11,6 +11,7 @@ Last Name       | First Name      | GitHub User Name     | Scrum Role
 --------------- | --------------- | -------------------- | ---------------
 Christian       | Remwood         | ChristianRemwood     | Product Owner
 Saunders        | Keegan          | k-saun               | Scrum Master
+Kasai           | Shinji          | shinjiksi            | Developer
 Jess            | Jasmine         | jasminejess          | Developer
 Mullarkey       | Sean            | sean-keisuke         | Developer
 
