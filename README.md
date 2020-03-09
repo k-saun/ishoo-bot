@@ -1,19 +1,20 @@
-## Team Name: TBD
+## Team Name: 6
 
-## Project Name: TBD
+## Project Name: Issue bot
 
 ## Project Description:
-TBD (e.g., build an iOS app for TBD)
+Creating a github app that automatically generates github issues based on todo tags within source code.
 
 ## Team Members:
 
 Last Name       | First Name      | GitHub User Name     | Scrum Role
 --------------- | --------------- | -------------------- | ---------------
-Mullarkey       | Sean            | sean-keisuke                  | TBDDeveloper
-TBD             | TBD             | TBD                  | TBDScrum Master
 Christian       | Remwood         | ChristianRemwood     | Product Owner
+Saunders        | Keegan          | k-saun               | Scrum Master
 Jess            | Jasmine         | jasminejess          | Developer
-TBD             | TBD             | TBD                  | TBD
+Mullarkey       | Sean            | sean-keisuke         | Developer
+
+
 
 ## Team Velocity:
 
