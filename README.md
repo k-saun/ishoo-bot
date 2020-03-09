@@ -12,7 +12,7 @@ Last Name       | First Name      | GitHub User Name     | Scrum Role
 Mullarkey       | Sean            | sean-keisuke                  | TBDDeveloper
 TBD             | TBD             | TBD                  | TBDScrum Master
 TBD             | TBD             | TBD                  | TBDProduct Owner
-Jess            | Jasmine         | TBD                  | TBDeveloper
+Jess            | Jasmine         | jasminejess          | Developer
 TBD             | TBD             | TBD                  | TBD
 
 ## Team Velocity:
