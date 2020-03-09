@@ -11,7 +11,7 @@ Last Name       | First Name      | GitHub User Name     | Scrum Role
 --------------- | --------------- | -------------------- | ---------------
 Mullarkey       | Sean            | sean-keisuke                  | TBDDeveloper
 TBD             | TBD             | TBD                  | TBDScrum Master
-Christian       | Remwood         | ChristianRemwood     | TBDProduct Owner
+Christian       | Remwood         | ChristianRemwood     | Product Owner
 Jess            | Jasmine         | jasminejess          | Developer
 TBD             | TBD             | TBD                  | TBD
 
