@@ -1,4 +1,4 @@
-## Team Name: 6
+## Team Name: Team6
 
 ## Project Name: Issue bot
 
