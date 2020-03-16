@@ -9,11 +9,11 @@ Creating a github app that automatically generates github issues based on todo t
 
 Last Name       | First Name      | GitHub User Name     | Scrum Role
 --------------- | --------------- | -------------------- | ---------------
-Christian       | Remwood         | ChristianRemwood     | Product Owner
-Saunders        | Keegan          | k-saun               | Scrum Master
-Kasai           | Shinji          | shinjiksi            | Developer
 Jess            | Jasmine         | jasminejess          | Developer
+Kasai           | Shinji          | shinjiksi            | Developer
 Mullarkey       | Sean            | sean-keisuke         | Developer
+Remwood         | Christian       | ChristianRemwood     | Product Owner
+Saunders        | Keegan          | k-saun               | Scrum Master
 
 
 
