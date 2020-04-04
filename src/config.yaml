@@ -1,0 +1,9 @@
+#Github Repo Access Config
+Github:
+  UserInfo:
+    RepoName: 'TestRepo'
+    RepoOwner: 'sean-keisuke'
+    Token: 7e25e17e591ba7a9bd708115624683ef9bcaf354
+  IssueReport: #work in progress
+    Title:
+    Body:
