@@ -16,6 +16,9 @@ function parse_yaml {
 }
 
 eval $(parse_yaml config.yaml)
-curl -i -H 'Authorization: token 7e25e17e591ba7a9bd708115624683ef9bcaf354' -d \
+
+#echo "Authorization token = $Github_UserInfo_Token"
+
+curl -i -H "Authorization: token $Github_UserInfo_Token" -d \
         '{ "title": "New logo", "body": "We should have one", "labels": ["design"]}' \
         https://api.github.com/repos/$Github_UserInfo_RepoOwner/$Github_UserInfo_RepoName/issues \
