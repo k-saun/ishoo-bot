@@ -1,10 +1,10 @@
 #Github Repo Access Config
 Github:
   UserInfo:
-    repoOwner: 'd'
-    repoName: 'd'
-    token: d
+    repoOwner: 'sean-keisuke'
+    repoName: 'TestRepo'
+    token: 852dfabd9892ef8c3ad20788146ea10d0fbe74ef
   IssueReport:
-    title: "	Sample title from HelloWorld "
-    body: "	Sample body, I wanna get  all kind of shit done. "
-    bug: " 	Currently labels are broken so we will, fix later, "
+    title: "Sample title from HelloWorld "
+    body: "Sample body, I wanna get all kind of shit done. "
+    bug: "Currently labels are broken so we will, fix later, "

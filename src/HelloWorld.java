@@ -11,7 +11,7 @@ class HelloWorld
 	TODO
 	Sample title from HelloWorld
 	----------------------------
-	Sample body, I wanna get 
+	Sample body, I wanna get
 	all kind of shit done.
 	----------------------------
  	Currently labels are broken so we will

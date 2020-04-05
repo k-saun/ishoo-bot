@@ -41,7 +41,7 @@ public class IssueHandler2
 
 	 while(!textFromFile.contains("-")) // get text until -
 	 {
- 		title = title + textFromFile + " ";
+ 		title = title + textFromFile.trim() + " ";
 		textFromFile = sc.nextLine().trim();
 	 }
 	 title = title + "\"";
@@ -53,7 +53,7 @@ public class IssueHandler2
 	 String body = "body: \"";
 	 while(!textFromFile.contains("-")) // get text until -
 	 {
- 		body = body + textFromFile + " ";
+ 		body = body + textFromFile.trim() + " ";
 		textFromFile = sc.nextLine().trim();
 	 }
 	 body = body + "\"";
@@ -66,7 +66,7 @@ public class IssueHandler2
 	 String bug = "bug: \"";
 	 while(!textFromFile.contains("-")) // get text until -
 	 {
- 		bug = bug + textFromFile + ", ";
+ 		bug = bug + textFromFile.trim() + ", ";
 		textFromFile = sc.nextLine().trim();
 	 }
          bug = bug + "\"";
