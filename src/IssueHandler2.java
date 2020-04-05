@@ -42,7 +42,7 @@ public class IssueHandler2
 	 while(!textFromFile.contains("-")) // get text until -
 	 {
  		title = title + textFromFile + " ";
-		textFromFile = sc.nextLine();
+		textFromFile = sc.nextLine().trim();
 	 }
 	 title = title + "\"";
 // 	 System.out.println(title); //print the title
@@ -54,7 +54,7 @@ public class IssueHandler2
 	 while(!textFromFile.contains("-")) // get text until -
 	 {
  		body = body + textFromFile + " ";
-		textFromFile = sc.nextLine();
+		textFromFile = sc.nextLine().trim();
 	 }
 	 body = body + "\"";
 
@@ -67,7 +67,7 @@ public class IssueHandler2
 	 while(!textFromFile.contains("-")) // get text until -
 	 {
  		bug = bug + textFromFile + ", ";
-		textFromFile = sc.nextLine();
+		textFromFile = sc.nextLine().trim();
 	 }
          bug = bug + "\"";
 //	 System.out.println(bug); //print bug label
@@ -77,7 +77,7 @@ public class IssueHandler2
          title = " ";	
          body = " ";	
          bug = " ";	
-         System.out.println("Config file built!");
+         System.out.println("Config file built!\n.........................................................");
       }
     }
     return bugReport;

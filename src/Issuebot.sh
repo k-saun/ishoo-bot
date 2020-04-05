@@ -1,7 +1,15 @@
 #!/bin/bash
 
 javac IssueHandler2.java
-java IssueHandler2
+
+#Uncomment to just run the java file
+#java IssueHandler2 
+
+#build a jar file for ruby
+jar cvfe IssueHandler2.jar IssueHandler2 *.class
+
+#execute jar file
+java -jar IssueHandler2.jar
 
 function parse_yaml {
    local prefix=$2
@@ -22,6 +30,7 @@ function parse_yaml {
 
 eval $(parse_yaml config.yaml)
 
+#tests for config files
 #echo $Github_IssueReport_title
 #echo $Github_IssueReport_body
 #echo $Github_IssueReport_bug
