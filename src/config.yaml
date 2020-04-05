@@ -1,9 +1,10 @@
 #Github Repo Access Config
 Github:
   UserInfo:
-    RepoName: 'TestRepo'
-    RepoOwner: 'sean-keisuke'
-    Token: 7e25e17e591ba7a9bd708115624683ef9bcaf354
-  IssueReport: #work in progress
-    Title:
-    Body:
+    repoOwner: 'sean-keisuke'
+    repoName: 'TestRepo'
+    token: 7e25e17e591ba7a9bd708115624683ef9bcaf354
+  IssueReport:
+    title: "A test title "
+    body: "This is a body This is all the content we need. "
+    bug: "bugs defect , "

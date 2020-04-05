@@ -1,3 +1,8 @@
+#!/bin/bash
+
+javac IssueHandler2.java
+java IssueHandler2
+
 function parse_yaml {
    local prefix=$2
    local s='[[:space:]]*' w='[a-zA-Z0-9_]*' fs=$(echo @|tr @ '\034')
@@ -17,8 +22,13 @@ function parse_yaml {
 
 eval $(parse_yaml config.yaml)
 
-#echo "Authorization token = $Github_UserInfo_Token"
+#echo $Github_IssueReport_title
+#echo $Github_IssueReport_body
+#echo $Github_IssueReport_bug
+#echo $Github_UserInfo_repoOwner
+#echo $Github_UserInfo_repoName
+#echo $Github_UserInfo_token
 
-curl -i -H "Authorization: token $Github_UserInfo_Token" -d \
-        '{ "title": "New logo", "body": "We should have one", "labels": ["design"]}' \
-        https://api.github.com/repos/$Github_UserInfo_RepoOwner/$Github_UserInfo_RepoName/issues \
+curl -i -H "Authorization: token $Github_UserInfo_token" -d \
+       "{ \"title\": \"$Github_IssueReport_title \", \"body\": \"$Github_IssueReport_body\", \"labels\": [\"design\"]}" \
+       https://api.github.com/repos/$Github_UserInfo_repoOwner/$Github_UserInfo_repoName/issues \
