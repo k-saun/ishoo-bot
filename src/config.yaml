@@ -7,4 +7,7 @@ Github:
   IssueReport:
     title: "Sample title from HelloWorld "
     body: "Sample body, I wanna get all kind of shit done. "
-    bug: "Currently labels are broken so we will, fix later, "
+    bug: 
+      - bug
+      - question
+

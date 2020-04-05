@@ -33,7 +33,7 @@ eval $(parse_yaml config.yaml)
 #tests for config files
 #echo $Github_IssueReport_title
 #echo $Github_IssueReport_body
-#echo $Github_IssueReport_bug
+#echo $Github_IssueReport_bug #currently Issuebot does not recognize yaml collections. will fix later
 #echo $Github_UserInfo_repoOwner
 #echo $Github_UserInfo_repoName
 #echo $Github_UserInfo_token

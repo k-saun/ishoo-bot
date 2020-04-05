@@ -14,8 +14,8 @@ class HelloWorld
 	Sample body, I wanna get
 	all kind of shit done.
 	----------------------------
- 	Currently labels are broken so we will
-	fix later
+	bug
+	question
 	-------------------------------------
 	*/
     } 

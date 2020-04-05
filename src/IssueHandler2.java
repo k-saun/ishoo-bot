@@ -63,15 +63,15 @@ public class IssueHandler2
 	 textFromFile = sc.nextLine();
 
 	 //find bug of issue report
-	 String bug = "bug: \"";
+	 String bug = "bug: \n";
 	 while(!textFromFile.contains("-")) // get text until -
 	 {
- 		bug = bug + textFromFile.trim() + ", ";
+ 		bug = bug + "      - " + textFromFile.trim() + "\n";
 		textFromFile = sc.nextLine().trim();
 	 }
-         bug = bug + "\"";
+         bug = bug + "\n";
 //	 System.out.println(bug); //print bug label
-	 bugReport = bugReport + "    " + title + "\n    " + body + "\n    " + bug + "";
+	 bugReport = bugReport + "    " + title + "\n    " + body + "\n    " + bug;
 	 
 
          title = " ";	
