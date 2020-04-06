@@ -33,7 +33,7 @@ public class IssueHandler2
     {
       textFromFile = sc.nextLine();
 
-      if(textFromFile.contains("TODO")) //find the TODO flag
+      if(textFromFile.toLowerCase().contains("@ishoo")) //find the TODO flag
       {  
 	 //find title
      	 String title = "title: \"";
