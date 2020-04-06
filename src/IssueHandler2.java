@@ -27,14 +27,16 @@ public class IssueHandler2
     String textFromFile;
     String bugReport = "#Github Repo Access Config\nGithub:\n  UserInfo:\n";   
     bugReport = bugReport + "    repoOwner: " + "'" + repoOwner + "'\n    " + "repoName: '" + repoName + "'\n    " + "token: " +  token + "\n";   
-    bugReport = bugReport + "  IssueReport:\n";
 
+    int numOfReports = 0;
     while (sc.hasNextLine()) 
     {
       textFromFile = sc.nextLine();
 
       if(textFromFile.toLowerCase().contains("@ishoo")) //find the TODO flag
       {  
+	 numOfReports++;
+	 bugReport = bugReport + "  IssueReport" + numOfReports + ":\n"; //create multiple Issue reports in config files
 	 //find title
      	 String title = "title: \"";
 	 textFromFile = sc.nextLine();
@@ -69,7 +71,6 @@ public class IssueHandler2
  		bug = bug + "      - " + textFromFile.trim() + "\n";
 		textFromFile = sc.nextLine().trim();
 	 }
-         bug = bug + "\n";
 //	 System.out.println(bug); //print bug label
 	 bugReport = bugReport + "    " + title + "\n    " + body + "\n    " + bug;
 	 
@@ -77,9 +78,9 @@ public class IssueHandler2
          title = " ";	
          body = " ";	
          bug = " ";	
-         System.out.println("Config file built!\n.........................................................");
       }
     }
+    System.out.println("Config file built!\n.........................................................");
     return bugReport;
   }	 
 

@@ -39,5 +39,5 @@ eval $(parse_yaml config.yaml)
 #echo $Github_UserInfo_token
 
 curl -i -H "Authorization: token $Github_UserInfo_token" -d \
-       "{ \"title\": \"$Github_IssueReport_title \", \"body\": \"$Github_IssueReport_body\", \"labels\": [\"design\"]}" \
+       "{ \"title\": \"$Github_IssueReport1_title \", \"body\": \"$Github_IssueReport1_body\", \"labels\": [\"design\"]}" \
        https://api.github.com/repos/$Github_UserInfo_repoOwner/$Github_UserInfo_repoName/issues \
