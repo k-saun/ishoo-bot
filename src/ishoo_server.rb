@@ -6,6 +6,7 @@ require 'openssl'     # Verifies the webhook signature
 require 'jwt'         # Authenticates a GitHub App
 require 'time'        # Gets ISO 8601 representation of a Time object
 require 'logger'      # Logs debug statements
+require 'yaml'	      # For config.yaml parsing	
 
 set :port, 3000
 set :bind, '0.0.0.0'
@@ -57,7 +58,7 @@ class GHAapp < Sinatra::Application
 
 
   post '/event_handler' do
-
+    CONFIG = Yaml.load_file("config.yml") unless defined? CONFIG #load config vals
     # # # # # # # # # # # #
     # ADD YOUR CODE HERE  #
     # # # # # # # # # # # #
@@ -77,6 +78,7 @@ class GHAapp < Sinatra::Application
     #Have helper methods to:
     #call generateBugReport from IssueHandler.jar
     #parse config.yaml
+    ## SUPER AWESOME RESOURCE http://jerodsanto.net/2008/08/easy-configuration-with-ruby-and-yaml/
     #Have post /event_handler create issue reports based on config file.
 
     # Saves the raw payload and converts the payload to JSON format
