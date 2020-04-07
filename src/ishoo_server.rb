@@ -72,6 +72,13 @@ class GHAapp < Sinatra::Application
     # ADD YOUR HELPER METHODS HERE  #
     # # # # # # # # # # # # # # # # #
 
+
+    #TODO
+    #Have helper methods to:
+    #call generateBugReport from IssueHandler.jar
+    #parse config.yaml
+    #Have post /event_handler create issue reports based on config file.
+
     # Saves the raw payload and converts the payload to JSON format
     def get_payload_request(request)
       # request.body is an IO or StringIO object
