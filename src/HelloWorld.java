@@ -12,7 +12,7 @@ class HelloWorld
 	Sample title from HelloWorld
 	----------------------------
 	Sample body, I wanna get
-	all kind of shit done.
+	all kinds of stuff done.
 	----------------------------
 	bug
 	question
@@ -22,8 +22,7 @@ class HelloWorld
 	TODO @iShoo
 	Sample title2 from HelloWorld
 	----------------------------
-	Sample body, I wanna get
-	all kind of shit done.
+	Sample body2.
 	----------------------------
 	bug
 	question
@@ -33,10 +32,10 @@ class HelloWorld
 	TODO @iShoo
 	Sample title3 from HelloWorld
 	----------------------------
-	Sample body, I wanna get
-	all kind of shit done.
+	Sample body 3 , I wanna get
+	stuff done.
 	----------------------------
-	bug
+	epic-story
 	question
 	-------------------------------------
 	*/
@@ -45,9 +44,8 @@ class HelloWorld
 	Sample title4 from HelloWorld
 	----------------------------
 	Sample body, I wanna get
-	all kind of shit done.
+	done.
 	----------------------------
-	bug
 	question
 	-------------------------------------
 	*/

@@ -18,6 +18,7 @@ public class IssueHandler2
   String filename, String currentDir, String repoName, String repoOwner, String token) 
   throws FileNotFoundException 
   { 
+    String configFile = currentDir + "/config.yaml";
     
     //method to generate bug report
     File file = new File(currentDir + "/" + filename);
@@ -81,6 +82,8 @@ public class IssueHandler2
       }
     }
     System.out.println("Config file built!\n.........................................................");
+
+    writeUsingFiles(bugReport, configFile);
     return bugReport;
   }	 
 
@@ -118,10 +121,10 @@ public class IssueHandler2
     
     String currentDir = System.getProperty("user.dir");
 	 
-    String configFile = currentDir + "/config.yaml";
+//    String configFile = currentDir + "/config.yaml";
+
     String bugReport = genBugReport(fileName, currentDir, repoName, repoOwner, token);
- 
-    writeUsingFiles(bugReport, configFile);
+//    writeUsingFiles(bugReport, configFile);
 
    } 
 } 
