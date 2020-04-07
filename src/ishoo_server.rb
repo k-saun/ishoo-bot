@@ -58,31 +58,42 @@ class GHAapp < Sinatra::Application
 
 
   post '/event_handler' do
-    CONFIG = Yaml.load_file("config.yml") unless defined? CONFIG #load config vals
-    
     #http://octokit.github.io/octokit.rb/Octokit/Client/Issues.html#create_issue-instance_method
     #create issue, probably call this in a helper method 
-    # # # # # # # # # # # #
-    # ADD YOUR CODE HERE  #
-    # # # # # # # # # # # #
 
+    case request.env['HTTP_X_GITHUB_EVENT']
+    when 'issues'
+      if @payload['action'] === 'opened'
+        handle_issue_opened_event(@payload)
+      end
+    end
+ 
     200 # success status
   end
 
 
   helpers do
 
-    # # # # # # # # # # # # # # # # #
-    # ADD YOUR HELPER METHODS HERE  #
-    # # # # # # # # # # # # # # # # #
+    def handle_issue_opened_event(payload)
+      #call generate Bug Report from IssueHandler2.jar
+   
+      CONFIG = Yaml.load_file("config.yml") unless defined? CONFIG #load config vals
+
+#      repo = payload['repository']['full_name']
+#      issue_number = payload['issue']['number']
+
+      repo = "#{CONFIG['Github_UserInfo_repoOwner']}/#{CONFIG['Github_UserInfo_repoName']}"
+      title = #{CONFIG['Github_IssueReport1_title']}
+      body = #{CONFIG['Github_IssueReport1_body']}
+
+      #test to see if issuereport is successfully generated from config.yaml
+      ## SUPER AWESOME RESOURCE http://jerodsanto.net/2008/08/easy-configuration-with-ruby-and-yaml/
+
+      @installation_client.create_issue(repo, title, body)
+
+    end
 
 
-    #TODO
-    #Have helper methods to:
-    #call generateBugReport from IssueHandler.jar
-    #parse config.yaml
-    ## SUPER AWESOME RESOURCE http://jerodsanto.net/2008/08/easy-configuration-with-ruby-and-yaml/
-    #Have post /event_handler create issue reports based on config file.
 
     # Saves the raw payload and converts the payload to JSON format
     def get_payload_request(request)
