@@ -59,6 +59,9 @@ class GHAapp < Sinatra::Application
 
   post '/event_handler' do
     CONFIG = Yaml.load_file("config.yml") unless defined? CONFIG #load config vals
+    
+    #http://octokit.github.io/octokit.rb/Octokit/Client/Issues.html#create_issue-instance_method
+    #create issue, probably call this in a helper method 
     # # # # # # # # # # # #
     # ADD YOUR CODE HERE  #
     # # # # # # # # # # # #
