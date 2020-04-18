@@ -101,6 +101,8 @@ class GHAapp < Sinatra::Application
       #invoke parser()
       commits.each  { |commit|
         puts commit
+        # commit_Data = commit(repo, sha, options = {}) ⇒ Sawyer::Resource
+        # parse_commit(commit_Data['patch'])
         #grab information needed to load commits using octokit
         # for each commit octokit provides parse the patch section.
         # parse_commit(commit)
