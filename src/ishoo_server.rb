@@ -110,6 +110,8 @@ class GHAapp < Sinatra::Application
       str.each_line do |line|
         if line.include? "@ishoo"
           puts line
+        end
+      end
     end
 
 
