@@ -67,6 +67,10 @@ class GHAapp < Sinatra::Application
         handle_issue_opened_event(@payload)
       end
     end
+
+  when 'push'
+      handle_new_commit_event(@payload['commits'])
+  end
  
     200 # success status
   end
@@ -91,6 +95,11 @@ class GHAapp < Sinatra::Application
 
       @installation_client.create_issue(repo, title, body)
 
+    end
+
+    def handle_new_commit_event(commits)
+      #invoke parser()
+      #create create issues in parser or return them and create them here.
     end
 
 
