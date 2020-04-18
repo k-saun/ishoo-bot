@@ -100,7 +100,10 @@ class GHAapp < Sinatra::Application
     def handle_new_commit_event(commits)
       #invoke parser()
       commits.each  { |commit|
-        parse_commit(commit)
+        puts commit
+        #grab information needed to load commits using octokit
+        # for each commit octokit provides parse the patch section.
+        # parse_commit(commit)
       }
       
       #create create issues in parser or return them and create them here.
