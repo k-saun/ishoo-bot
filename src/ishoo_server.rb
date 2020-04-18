@@ -99,7 +99,17 @@ class GHAapp < Sinatra::Application
 
     def handle_new_commit_event(commits)
       #invoke parser()
+      commits.each  { |commit|
+        parse_commit(commit)
+      }
+      
       #create create issues in parser or return them and create them here.
+    end
+
+    def parse_commit(commit)
+      str.each_line do |line|
+        if line.include? "@ishoo"
+          puts line
     end
 
 
