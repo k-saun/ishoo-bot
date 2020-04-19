@@ -100,13 +100,17 @@ class GHAapp < Sinatra::Application
     def handle_new_commit_event(commits)
       #invoke parser()
       commits.each  { |commit|
-        puts commit
-        # commit_Data = commit(repo, sha, options = {}) ⇒ Sawyer::Resource
+        commit['files'].each {|file|
+          parse_commit(file['patch'])
+        }
+      }
+      # if the code above doesnt have enough info, load each commit manuallt from push data. 
+        # puts commit
+        # commit_Data = commit(repo, sha, options = {})
         # parse_commit(commit_Data['patch'])
         #grab information needed to load commits using octokit
         # for each commit octokit provides parse the patch section.
         # parse_commit(commit)
-      }
       
       #create create issues in parser or return them and create them here.
     end
