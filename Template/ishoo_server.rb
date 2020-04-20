@@ -70,6 +70,10 @@ class GHAapp < Sinatra::Application
   when 'push'
       handle_new_commit_event(@payload['commits'])
   end
+
+  when 'issue_comment'
+    puts "Handle issue comment commands here"
+  end
  
     200 # success status
   end
