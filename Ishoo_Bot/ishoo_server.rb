@@ -117,7 +117,9 @@ class GHAapp < Sinatra::Application
             Description = line[descStart, descEnd-descStart] 
 	  elsif line.include? "Close"
 	    puts "close issue"
-	    #close issue here   
+	    #close issue here  
+	    @installation_client.close_issue(repo, number, options = {})
+	  #elsif line.include? *need to recognize when @ishoo is added* 
           else
             puts "flag invalid, no description"
           end
