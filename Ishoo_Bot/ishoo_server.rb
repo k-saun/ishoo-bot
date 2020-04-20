@@ -67,10 +67,13 @@ class GHAapp < Sinatra::Application
       end
     end
 
+  case request.env['HTTP_X_GITHUB_EVENT']
   when 'push'
       handle_new_commit_event(@payload['commits'])
   end
 
+
+  case request.env['HTTP_X_GITHUB_EVENT']
   when 'issue_comment'
     puts "Handle issue comment commands here"
   end
