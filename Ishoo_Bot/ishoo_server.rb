@@ -67,10 +67,13 @@ class GHAapp < Sinatra::Application
       end
     end
 
+  case request.env['HTTP_X_GITHUB_EVENT']
   when 'push'
       handle_new_commit_event(@payload['commits'])
   end
 
+
+  case request.env['HTTP_X_GITHUB_EVENT']
   when 'issue_comment'
     puts "Handle issue comment commands here"
   end
@@ -120,17 +123,19 @@ class GHAapp < Sinatra::Application
           end
         end
       end
-#      @installation_client.create_issue(repo, title, body)
+      repo = payload['repository']['full_name']
+#     @installation_client.create_issue(repo, title, Description)
     end
 
-    def handle_close_issue(commit)
+    def handle_close_issue(commit, payload)
         str.each_line do |line|
 	   if line.include? "@ishoo"
                puts line
                if line.include? "Close"
 	          puts "close issue"
-	          #close issue here  
-	          @installation_client.close_issue(repo, issue_number)
+	           repo = payload['repository']['full_name']                                                                               
+      		   issue_number = payload['issue']['number']                                                                               
+	           @installation_client.close_issue(repo, issue_number)
 	       end
 	   end
         end
