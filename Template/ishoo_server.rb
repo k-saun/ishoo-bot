@@ -103,7 +103,7 @@ class GHAapp < Sinatra::Application
         # for each commit octokit provides parse the patch section.
         # parse_commit(commit)
       
-      #create create issues in parser or return them and create them here.
+      #create issues in parser or return them and create them here.
     end
 
     def parse_commit(commit)
@@ -114,7 +114,10 @@ class GHAapp < Sinatra::Application
             puts "find description"
             descStart = line.index('[')     
             descEnd = line.index(']')
-            Description = line[descStart, descEnd-descStart]  
+            Description = line[descStart, descEnd-descStart] 
+	  elsif line.include? "Close"
+	    puts "close issue"
+	    #close issue here  
           else
             puts "flag invalid, no description"
           end
