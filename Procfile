@@ -1,0 +1,1 @@
+web: ruby ./Ishoo_Bot/ishoo_server.rb
