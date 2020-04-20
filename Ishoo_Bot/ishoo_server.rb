@@ -142,13 +142,13 @@ class GHAapp < Sinatra::Application
     end
 
     # identify ToDo and insert template  #still working 
-      if File.readlines(" ").grep(/ToDo/) # not sure how to grab a file 
-        # when ToDo detected, insert a teplate
-        file.write("\n#Title - " + 
-                   "\n#priority levels - " + 
-                   "\n#due date - ")
-      end
-    end
+    #   if File.readlines(" ").grep(/ToDo/) # not sure how to grab a file 
+    #     # when ToDo detected, insert a teplate
+    #     file.write("\n#Title - " + 
+    #                "\n#priority levels - " + 
+    #                "\n#due date - ")
+    #   end
+    # end
 
 
 
