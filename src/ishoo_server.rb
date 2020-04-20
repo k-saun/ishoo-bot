@@ -206,6 +206,14 @@ class GHAapp < Sinatra::Application
       logger.debug "----    action #{@payload['action']}" unless @payload['action'].nil?
     end
 
+    def bot_detects_ToDo
+      found = "ToDo"
+      if found.include? "ToDo"
+      puts "ToDo detected"
+      end
+    end
+
+    end
   end
 
   # Finally some logic to let us run this server directly from the command line,
