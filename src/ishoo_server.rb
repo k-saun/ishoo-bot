@@ -119,6 +119,11 @@ class GHAapp < Sinatra::Application
       str.each_line do |line|
         if line.include? "@ishoo"
           puts line
+          if line.include? "["
+            puts "find description"
+          else
+            puts "flag invalid, no description"
+          end
         end
       end
     end
