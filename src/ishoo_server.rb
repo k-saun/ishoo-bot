@@ -119,8 +119,11 @@ class GHAapp < Sinatra::Application
       str.each_line do |line|
         if line.include? "@ishoo"
           puts line
-          if line.include? "["
+          if line.include? "[" and line.include? "]"
             puts "find description"
+            descStart = line.index('[')     
+            descEnd = line.index(']')
+            Description = line[descStart, descEnd-descStart]   
           else
             puts "flag invalid, no description"
           end
