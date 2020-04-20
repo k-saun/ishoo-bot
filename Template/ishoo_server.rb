@@ -104,7 +104,6 @@ class GHAapp < Sinatra::Application
         # parse_commit(commit)
       
       #create create issues in parser or return them and create them here.
-      @installation_client.create_issue(repo, title, body)
     end
 
     def parse_commit(commit)
@@ -121,6 +120,7 @@ class GHAapp < Sinatra::Application
           end
         end
       end
+#      @installation_client.create_issue(repo, title, body)
     end
 
 
