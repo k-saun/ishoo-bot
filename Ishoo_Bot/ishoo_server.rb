@@ -136,13 +136,24 @@ class GHAapp < Sinatra::Application
         end
     end
 
+    # identify ToDo and insert template  #still working 
+      if File.readlines(" ").grep(/ToDo/) # not sure how to grab a file 
+        # when ToDo detected, insert a teplate
+        file.write("\n#Title - " + 
+                   "\n#priority levels - " + 
+                   "\n#due date - ")
+      end
+    end
+
+
+
 
     # Saves the raw payload and converts the payload to JSON format
     def get_payload_request(request)
       # request.body is an IO or StringIO object
       # Rewind in case someone already read it
       request.body.rewind
-      # The raw text of the body is required for webhook signature verification
+      # The raw text of the body is required for webho ok signature verification
       @payload_raw = request.body.read
       begin
         @payload = JSON.parse @payload_raw
