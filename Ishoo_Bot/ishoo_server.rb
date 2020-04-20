@@ -30,6 +30,10 @@ set :bind, '0.0.0.0'
 
 class GHAapp < Sinatra::Application
 
+  get'/' do
+	"Welcome to IshooBot"
+  end
+
   # Expects that the private key in PEM format. Converts the newlines
   PRIVATE_KEY = OpenSSL::PKey::RSA.new(ENV['GITHUB_PRIVATE_KEY'].gsub('\n', "\n"))
 
@@ -117,14 +121,14 @@ class GHAapp < Sinatra::Application
             puts "find description"
             descStart = line.index('[')     
             descEnd = line.index(']')
-            Description = line[descStart, descEnd-descStart] 
+            description = line[descStart, descEnd-descStart] 
           else
             puts "flag invalid, no description"
           end
         end
       end
       repo = payload['repository']['full_name']
-#     @installation_client.create_issue(repo, title, Description)
+#     @installation_client.create_issue(repo, title, description)
     end
 
     def handle_close_issue(commit, payload)
