@@ -117,7 +117,7 @@ class GHAapp < Sinatra::Application
             Description = line[descStart, descEnd-descStart] 
 	  elsif line.include? "Close"
 	    puts "close issue"
-	    #close issue here  
+	    #close issue here   
           else
             puts "flag invalid, no description"
           end
