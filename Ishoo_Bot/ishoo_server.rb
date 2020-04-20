@@ -115,11 +115,6 @@ class GHAapp < Sinatra::Application
             descStart = line.index('[')     
             descEnd = line.index(']')
             Description = line[descStart, descEnd-descStart] 
-	  elsif line.include? "Close"
-	    puts "close issue"
-	    #close issue here  
-	    @installation_client.close_issue(repo, number, options = {})
-	  #elsif line.include? *need to recognize when @ishoo is added* 
           else
             puts "flag invalid, no description"
           end
@@ -128,6 +123,18 @@ class GHAapp < Sinatra::Application
 #      @installation_client.create_issue(repo, title, body)
     end
 
+    def handle_close_issue(commit)
+        str.each_line do |line|
+	   if line.include? "@ishoo"
+               puts line
+               if line.include? "Close"
+	          puts "close issue"
+	          #close issue here  
+	          @installation_client.close_issue(repo, issue_number)
+	       end
+	   end
+        end
+    end
 
 
     # Saves the raw payload and converts the payload to JSON format
