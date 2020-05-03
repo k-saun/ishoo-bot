@@ -35,7 +35,7 @@ class GHAapp < Sinatra::Application
   end
 
   # Expects that the private key in PEM format. Converts the newlines
-  PRIVATE_KEY = OpenSSL::PKey::RSA.new(ENV['GITHUB_PRIVATE_KEY'].gsub('\n', "\n"))
+  PRIVATE_KEY = OpenSSL::PKey::RSA.new(ENV['PRIVATE_KEY'].gsub('\n', "\n"))
 
   # Your registered app must have a secret set. The secret is used to verify
   # that webhooks are sent by GitHub.
@@ -73,7 +73,18 @@ class GHAapp < Sinatra::Application
 
   case request.env['HTTP_X_GITHUB_EVENT']
   when 'push'
-      handle_new_commit_event(@payload['commits'])
+      # puts @payload['repository']
+      # temp = repository(@payload['repository'])
+      # puts temp
+      puts @payload['commits']
+      @payload['commits'].each do |x|
+        puts @payload['repository']['id'].to_int
+        puts x['id']
+        data = Octokit::client.commit(@payload['repository']['id'].to_int,x['id'], options = {})
+        data['files'].each do |y|
+          parse_commit(y['patch'], @payload)
+        end
+      end
   end
 
 
@@ -95,40 +106,42 @@ class GHAapp < Sinatra::Application
       @installation_client.add_labels_to_an_issue(repo, issue_number, ['needs-response'])
     end
 
-    def handle_new_commit_event(commits)
-      #invoke parser()
-      commits.each  { |commit|
-        commit['files'].each {|file|
-          parse_commit(file['patch'])
-        }
-      }
-      # if the code above doesnt have enough info, load each commit manuallt from push data. 
-        # puts commit
-        # commit_Data = commit(repo, sha, options = {})
-        # parse_commit(commit_Data['patch'])
-        #grab information needed to load commits using octokit
-        # for each commit octokit provides parse the patch section.
-        # parse_commit(commit)
-      
-      #create issues in parser or return them and create them here.
-    end
-
-    def parse_commit(commit)
-      str.each_line do |line|
-        if line.include? "@ishoo"
+    def parse_commit(commit, payload)
+      title = ""
+      description = ""
+      due = ""
+      commit.each_line do |line| 
+        if line.include? "@ishoo" and line[0] == '+'
           puts line
+          if line.include? "{" 
+            puts "find title"
+            dueStart = line.index('{')     
+            dueEnd = line.index('}')
+            due = line[dueStart+1, dueEnd-dueStart-1] 
+            puts due
+          end
+          if line.include? "(" 
+            puts "find title"
+            titleStart = line.index('(')     
+            titleEnd = line.index(')')
+            title = line[titleStart+1, titleEnd-titleStart-1] 
+            puts title
+          else
+            puts "flag invalid, no title"
+          end
           if line.include? "[" 
             puts "find description"
             descStart = line.index('[')     
             descEnd = line.index(']')
-            description = line[descStart, descEnd-descStart] 
+            description = line[descStart+1, descEnd-descStart-1] 
+            puts description
           else
             puts "flag invalid, no description"
           end
         end
       end
       repo = payload['repository']['full_name']
-#     @installation_client.create_issue(repo, title, description)
+     @installation_client.create_issue(repo, title, description)
     end
 
     def handle_close_issue(commit, payload)
@@ -182,7 +195,7 @@ class GHAapp < Sinatra::Application
           iat: Time.now.to_i,
 
           # JWT expiration time (10 minute maximum)
-          exp: Time.now.to_i + (10 * 60),
+          exp: Time.now.to_i + (9 * 60),
 
           # Your GitHub App's identifier number
           iss: APP_IDENTIFIER
