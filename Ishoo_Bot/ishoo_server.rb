@@ -11,23 +11,6 @@ set :port, 3000
 set :bind, '0.0.0.0'
 
 
-# This is template code to create a GitHub App server.
-# You can read more about GitHub Apps here: # https://developer.github.com/apps/
-#
-# On its own, this app does absolutely nothing, except that it can be installed.
-# It's up to you to add functionality!
-# You can check out one example in advanced_server.rb.
-#
-# This code is a Sinatra app, for two reasons:
-#   1. Because the app will require a landing page for installation.
-#   2. To easily handle webhook events.
-#
-# Of course, not all apps need to receive and process events!
-# Feel free to rip out the event handling code if you don't need it.
-#
-# Have fun!
-#
-
 class GHAapp < Sinatra::Application
 
   get'/' do
@@ -61,8 +44,6 @@ class GHAapp < Sinatra::Application
 
 
   post '/event_handler' do
-    #http://octokit.github.io/octokit.rb/Octokit/Client/Issues.html#create_issue-instance_method
-    #create issue, probably call this in a helper method 
 
     case request.env['HTTP_X_GITHUB_EVENT']
     when 'issues'
@@ -157,18 +138,6 @@ class GHAapp < Sinatra::Application
 	   end
         end
     end
-
-    # identify ToDo and insert template  #still working 
-    #   if File.readlines(" ").grep(/ToDo/) # not sure how to grab a file 
-    #     # when ToDo detected, insert a teplate
-    #     file.write("\n#Title - " + 
-    #                "\n#priority levels - " + 
-    #                "\n#due date - ")
-    #   end
-    # end
-
-
-
 
     # Saves the raw payload and converts the payload to JSON format
     def get_payload_request(request)
