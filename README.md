@@ -23,7 +23,7 @@ Sprint | Estimated Velocity | Actual Velocity
 ------ | ------------------ | ---------------
 1      | 37                 | 25
 2      | 32                 | 30
-3      | TBD                | TBD
+3      | 20                 | TBD
 4      | TBD                | TBD
 
 ## Scrum Linter Reports:
