@@ -22,7 +22,7 @@ Saunders        | Keegan          | k-saun               | Scrum Master
 Sprint | Estimated Velocity | Actual Velocity
 ------ | ------------------ | ---------------
 1      | 37                 | 25
-2      | 32                 | TBD
+2      | 32                 | 30
 3      | TBD                | TBD
 4      | TBD                | TBD
 
